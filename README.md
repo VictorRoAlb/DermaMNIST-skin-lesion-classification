@@ -61,7 +61,12 @@ Como apoyo interpretativo, incluimos dos ejemplos Grad-CAM seleccionados del mod
 
 ## Checkpoints y pesos
 
-Hemos extraído los checkpoints finales al directorio local `models/checkpoints/` para facilitar su reutilización, pero no los hemos versionado en este repositorio público. Git LFS está disponible en el entorno, aunque en esta versión del repositorio hemos preferido documentar su uso en `docs/WEIGHTS.md` y no publicar archivos pesados.
+Hemos publicado los seis checkpoints finales entrenados por nosotros en `models/checkpoints/` utilizando Git LFS, de forma que puedan reutilizarse sin incorporar al repositorio pesos externos de terceros. Para descargar estos archivos tras clonar el repositorio recomendamos ejecutar `git lfs install` y `git lfs pull`.
+
+
+## Reutilización de checkpoints
+
+Los checkpoints finales publicados en Git LFS corresponden únicamente a los modelos entrenados en nuestro trabajo. No redistribuimos pesos externos de ImageNet, RadImageNet/RAC ni EfficientNet-B1 en entorno ISIC fuera del resultado final entrenado.
 
 ## Licencias, datos y pesos preentrenados
 

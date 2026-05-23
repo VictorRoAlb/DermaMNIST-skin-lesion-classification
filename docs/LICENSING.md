@@ -16,5 +16,6 @@ La licencia del repositorio se aplica únicamente al código propio y a la docum
 
 - No redistribuimos el dataset DermaMNIST.
 - No redistribuimos imágenes crudas del dataset ni galerías completas derivadas del mismo.
-- No redistribuimos pesos externos ni checkpoints entrenados sobre pesos externos en esta versión pública.
+- Compartimos únicamente los checkpoints finales entrenados en nuestro trabajo mediante Git LFS.
+- No redistribuimos pesos externos como archivos independientes.
 - Presentamos el repositorio como trabajo académico y reproducible.

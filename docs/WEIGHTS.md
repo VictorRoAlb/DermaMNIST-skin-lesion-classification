@@ -1,17 +1,17 @@
 # Checkpoints y pesos
 
-En nuestro trabajo hemos generado checkpoints finales para las seis configuraciones. Git LFS está disponible en el entorno local, pero en esta versión pública del repositorio hemos optado por no versionar los checkpoints pesados para mantener el repositorio ligero y evitar redistribuir pesos externos o derivados.
+En nuestro trabajo hemos generado checkpoints finales para las seis configuraciones principales. En esta versión pública del repositorio hemos decidido compartir esos checkpoints finales mediante Git LFS para facilitar su reutilización, pero seguimos sin redistribuir pesos externos de terceros.
 
-## Checkpoints finales disponibles localmente
+## Checkpoints publicados
 
-- `M3_RESNET50_IMAGENET_DEEP_seed123_best.keras`
 - `M1_CNN_PROPIA_224_seed123_best.keras`
-- `M6_MAXNET_ISIC_DERMATOLOGY_FROZEN_BASELINE_seed123_best.pt`
 - `M2_RESNET50_IMAGENET_SHALLOW_seed123_best.keras`
-- `M5_RESNET50_RADIMAGENET_RAC_DEEP_seed123_best.pt`
+- `M3_RESNET50_IMAGENET_DEEP_seed123_best.keras`
 - `M4_RESNET50_RADIMAGENET_RAC_SHALLOW_seed123_best.pt`
+- `M5_RESNET50_RADIMAGENET_RAC_DEEP_seed123_best.pt`
+- `M6_MAXNET_ISIC_DERMATOLOGY_FROZEN_BASELINE_seed123_best.pt`
 
-## Ruta local esperada
+## Ruta del repositorio
 
 ```text
 models/checkpoints/
@@ -23,9 +23,14 @@ models/checkpoints/
 └── M6_MAXNET_ISIC_DERMATOLOGY_FROZEN_BASELINE_seed123_best.pt
 ```
 
-## Criterio de publicación
+## Uso
 
-- Hemos extraído los checkpoints finales al directorio local `models/checkpoints/`.
-- No los hemos incluido en el repositorio público, aunque Git LFS podría utilizarse en una versión futura si se quisiera compartir únicamente los modelos entrenados por nosotros.
-- No redistribuimos pesos externos de ImageNet, RadImageNet/RAC ni EfficientNet-B1 en entorno ISIC.
-- Si alguien quiere reutilizar los checkpoints, debe colocarlos manualmente en `models/checkpoints/` o trabajar con una ruta externa equivalente.
+- Hemos versionado estos checkpoints con Git LFS.
+- Tras clonar el repositorio, conviene ejecutar `git lfs install` y `git lfs pull`.
+- Los checkpoints permiten reutilizar directamente los modelos finales entrenados en nuestro trabajo.
+
+## Alcance de la redistribución
+
+- Compartimos únicamente los checkpoints finales entrenados por nosotros.
+- No redistribuimos pesos externos de ImageNet, RadImageNet/RAC ni EfficientNet-B1 en entorno ISIC como archivos independientes.
+- Si se desean regenerar los modelos desde cero, debe seguirse el notebook principal y obtener los pesos externos desde sus fuentes oficiales.

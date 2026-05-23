@@ -14,4 +14,11 @@ figures/correct_incorrect_examples/
 *.pt
 *.pth
 *.ckpt
+!models/checkpoints/
 !models/checkpoints/.gitkeep
+!models/checkpoints/M1_CNN_PROPIA_224_seed123_best.keras
+!models/checkpoints/M2_RESNET50_IMAGENET_SHALLOW_seed123_best.keras
+!models/checkpoints/M3_RESNET50_IMAGENET_DEEP_seed123_best.keras
+!models/checkpoints/M4_RESNET50_RADIMAGENET_RAC_SHALLOW_seed123_best.pt
+!models/checkpoints/M5_RESNET50_RADIMAGENET_RAC_DEEP_seed123_best.pt
+!models/checkpoints/M6_MAXNET_ISIC_DERMATOLOGY_FROZEN_BASELINE_seed123_best.pt
