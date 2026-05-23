@@ -1,0 +1,7 @@
+model_id,display_name,top_confusion_real,top_confusion_pred,count
+M1_CNN_PROPIA_224,M1: CNN propia,melanoma,melanocytic nevi,107
+M2_RESNET50_IMAGENET_SHALLOW,M2: ResNet50 ImageNet shallow,melanoma,melanocytic nevi,71
+M3_RESNET50_IMAGENET_DEEP,M3: ResNet50 ImageNet deep,melanoma,melanocytic nevi,67
+M4_RESNET50_RADIMAGENET_RAC_SHALLOW,M4: ResNet50 RadImageNet/RAC shallow,melanoma,melanocytic nevi,104
+M5_RESNET50_RADIMAGENET_RAC_DEEP,M5: ResNet50 RadImageNet/RAC deep,melanoma,melanocytic nevi,93
+M6_MAXNET_ISIC_DERMATOLOGY_FROZEN_BASELINE,M6: EfficientNet-B1 ISIC frozen,melanoma,melanocytic nevi,70

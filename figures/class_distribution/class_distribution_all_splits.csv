@@ -1,0 +1,22 @@
+split,class_id,class_name,count,percentage
+train,0,actinic keratoses and intraepithelial carcinoma,228,3.2538889681746825
+train,1,basal cell carcinoma,359,5.1234479805908375
+train,2,benign keratosis-like lesions,769,10.974739546168118
+train,3,dermatofibroma,80,1.1417154274297132
+train,4,melanoma,779,11.117453974596831
+train,5,melanocytic nevi,4693,66.97588126159555
+train,6,vascular lesions,99,1.41287284144427
+val,0,actinic keratoses and intraepithelial carcinoma,33,3.2901296111665004
+val,1,basal cell carcinoma,52,5.18444666001994
+val,2,benign keratosis-like lesions,110,10.967098703888334
+val,3,dermatofibroma,12,1.1964107676969093
+val,4,melanoma,111,11.066799601196411
+val,5,melanocytic nevi,671,66.89930209371884
+val,6,vascular lesions,14,1.3958125623130608
+test,0,actinic keratoses and intraepithelial carcinoma,66,3.291770573566085
+test,1,basal cell carcinoma,103,5.13715710723192
+test,2,benign keratosis-like lesions,220,10.972568578553616
+test,3,dermatofibroma,23,1.14713216957606
+test,4,melanoma,223,11.12219451371571
+test,5,melanocytic nevi,1341,66.88279301745636
+test,6,vascular lesions,29,1.4463840399002494
