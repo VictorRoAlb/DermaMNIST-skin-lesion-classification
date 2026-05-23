@@ -4,7 +4,7 @@ Autores: Víctor Rodríguez Albendea y Patricia Rodrigo Barrio
 
 ## Resumen
 
-En este repositorio presentamos nuestro trabajo académico sobre clasificación multiclase de lesiones cutáneas con DermaMNIST. Hemos comparado una CNN propia entrenada desde cero, dos variantes de transferencia con ResNet50 e ImageNet, dos variantes con inicialización médica RadImageNet/RAC y una referencia dermatológica basada en EfficientNet-B1 preentrenada en el entorno ISIC.
+En este repositorio presentamos nuestro trabajo académico sobre clasificación multiclase de lesiones cutáneas con DermaMNIST. Hemos comparado una CNN propia entrenada desde cero, dos variantes de transferencia con ResNet50 e ImageNet, dos variantes con inicialización médica RadImageNet/RAC y una referencia dermatológica basada en EfficientNet-B1 / MaxNet preentrenada en el entorno ISIC.
 
 Hemos ejecutado el trabajo final en Google Colab con GPU NVIDIA T4.
 
@@ -34,61 +34,37 @@ El dataset no se redistribuye en este repositorio. Para reproducir el trabajo de
 
 Hemos evaluado Accuracy, Balanced Accuracy, Macro F1, Cohen’s Kappa y Macro Recall. Hemos utilizado métricas macro y balanced accuracy porque DermaMNIST presenta desbalanceo entre clases y queríamos evitar una interpretación basada únicamente en accuracy.
 
-## Configuración resumida de modelos
+## Resultados y conclusiones
 
-| ID | Backbone | Inicialización | Tipo de ajuste | Parámetros entrenables |
-|---|---|---|---|---:|
-| M1 | CNN propia | Aleatoria | Entrenamiento completo | 157.159 |
-| M2 | ResNet50 | ImageNet | Shallow tuning | 526.343 |
-| M3 | ResNet50 | ImageNet | Deep tuning parcial | 15.479.815 |
-| M4 | ResNet50 | RadImageNet / RAC | Shallow tuning | 526.343 |
-| M5 | ResNet50 | RadImageNet / RAC | Deep tuning parcial | 15.468.551 |
-| M6 | EfficientNet-B1 | ISIC / entorno dermatológico | Backbone congelado | 8.967 |
+- M3 es el mejor modelo comparable por Macro F1 y Balanced Accuracy.
+- M6 obtiene la mayor Accuracy y el mayor Kappa, pero no supera a M3 en Macro F1.
+- Los resultados principales proceden de métricas agregadas y bootstrap en test.
 
-## Resultados finales en test
+## Figuras destacadas
 
-| Modelo | Acc. | Bal. Acc. | Macro F1 | Kappa | Macro Rec. |
-|---|---|---|---|---|---|
-| M1: CNN propia | 0.711 ± 0.008 | 0.450 ± 0.018 | 0.419 ± 0.016 | 0.435 ± 0.016 | 0.450 ± 0.018 |
-| M2: ResNet50 ImageNet shallow | 0.812 ± 0.008 | 0.649 ± 0.023 | 0.645 ± 0.020 | 0.642 ± 0.015 | 0.649 ± 0.023 |
-| M3: ResNet50 ImageNet deep | 0.850 ± 0.008 | 0.706 ± 0.022 | 0.736 ± 0.019 | 0.706 ± 0.015 | 0.706 ± 0.022 |
-| M4: ResNet50 RadImageNet/RAC shallow | 0.723 ± 0.008 | 0.416 ± 0.018 | 0.417 ± 0.017 | 0.450 ± 0.016 | 0.416 ± 0.018 |
-| M5: ResNet50 RadImageNet/RAC deep | 0.728 ± 0.008 | 0.468 ± 0.018 | 0.445 ± 0.016 | 0.482 ± 0.015 | 0.468 ± 0.018 |
-| M6: EfficientNet-B1 ISIC frozen | 0.872 ± 0.006 | 0.631 ± 0.011 | 0.619 ± 0.015 | 0.753 ± 0.012 | 0.631 ± 0.011 |
+- `figures/learning_curves/M3_RESNET50_IMAGENET_DEEP_seed123_learning_curves.png`
+- `figures/paper/m3_learning_curves.png`
+- `figures/paper/final_metrics_comparison.png`
+- `figures/paper/macro_f1_vs_training_time.png`
 
-## Interpretación breve
+Como apoyo interpretativo, incluimos dos ejemplos Grad-CAM seleccionados del modelo M3: un caso correctamente clasificado y un caso incorrecto. Estas visualizaciones se emplean únicamente como ejemplos cualitativos para comprobar si la activación del modelo se concentra en regiones visualmente relevantes.
 
-- Hemos observado que **M3: ResNet50 ImageNet deep** es el mejor modelo comparable por Macro F1 y Balanced Accuracy.
-- **M6: EfficientNet-B1 ISIC frozen** obtiene la mayor Accuracy y el mayor valor de Kappa, pero no alcanza el mejor Macro F1 ni la mejor Balanced Accuracy.
-- En conjunto, la comparación muestra que la transferencia desde ImageNet con deep tuning parcial fue la estrategia más equilibrada para este experimento.
+- Ejemplo Grad-CAM correcto seleccionado: `correct_01_idx0.png`
+- Ejemplo Grad-CAM incorrecto seleccionado: `incorrect_01_idx3.png`
 
 ## Reproducción
 
 1. Instalar las dependencias con `pip install -r requirements.txt`.
 2. Abrir `notebooks/Trabajo_Deep_Learning_2026_Victor_Patri_FINAL.ipynb` en Google Colab.
-3. Activar GPU y montar Google Drive si se quieren reutilizar cachés o checkpoints.
+3. Activar GPU y montar Drive si se quieren reutilizar cachés o checkpoints locales.
 4. Ejecutar las secciones en orden.
 
-## Regeneración de figuras
+## Checkpoints y pesos
 
-Para regenerar las figuras principales del informe:
-
-```bash
-python scripts/make_paper_figures.py
-```
-
-## Inspección rápida de resultados
-
-```bash
-python scripts/inspect_results.py
-```
+Hemos extraído los checkpoints finales al directorio local `models/checkpoints/` para facilitar su reutilización, pero no los hemos versionado en este repositorio público. Git LFS está disponible en el entorno, aunque en esta versión del repositorio hemos preferido documentar su uso en `docs/WEIGHTS.md` y no publicar archivos pesados.
 
 ## Licencias, datos y pesos preentrenados
 
 Los datos y pesos preentrenados utilizados en este trabajo proceden de fuentes externas y no se redistribuyen en este repositorio. El repositorio contiene el código, resultados agregados, figuras y documentación generada para el estudio. Para reproducir el trabajo, los datasets y pesos deben obtenerse desde sus fuentes oficiales respetando sus licencias correspondientes.
 
 DermaMNIST deriva de HAM10000. Por ello, el modelo EfficientNet-B1 preentrenado en el entorno ISIC se mantiene congelado y solo se entrena la cabeza de clasificación. Sus resultados se interpretan como una referencia dermatológica de dominio cercano, no como una comparación completamente independiente.
-
-## Checkpoints
-
-Los pesos y checkpoints grandes no se versionan directamente en git. Hemos documentado su uso en `docs/WEIGHTS.md`.

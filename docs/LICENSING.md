@@ -2,7 +2,7 @@
 
 El código y la documentación propios de este repositorio forman parte del trabajo académico de Víctor Rodríguez Albendea y Patricia Rodrigo Barrio.
 
-La licencia del repositorio se aplica únicamente al código propio y a la documentación propia. Los datos y pesos preentrenados utilizados en el trabajo proceden de fuentes externas y no se redistribuyen aquí salvo indicación expresa de la fuente original.
+La licencia del repositorio se aplica únicamente al código propio y a la documentación propia. No redistribuimos DermaMNIST, HAM10000, ImageNet, RadImageNet/RAC ni pesos externos de terceros dentro de este repositorio.
 
 | Recurso | Uso en el trabajo | Redistribución en este repo | Nota |
 |---|---|---|---|
@@ -15,6 +15,6 @@ La licencia del repositorio se aplica únicamente al código propio y a la docum
 ## Alcance de este repositorio
 
 - No redistribuimos el dataset DermaMNIST.
-- No redistribuimos imágenes crudas del dataset ni copias completas del mismo.
-- No redistribuimos pesos externos si su licencia no lo permite.
+- No redistribuimos imágenes crudas del dataset ni galerías completas derivadas del mismo.
+- No redistribuimos pesos externos ni checkpoints entrenados sobre pesos externos en esta versión pública.
 - Presentamos el repositorio como trabajo académico y reproducible.
