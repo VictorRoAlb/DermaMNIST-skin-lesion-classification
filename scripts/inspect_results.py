@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import pandas as pd
 
 
@@ -52,8 +53,7 @@ def main() -> int:
         ROOT / "figures" / "learning_curves",
         ROOT / "figures" / "confusion_matrices",
         ROOT / "figures" / "model_comparison",
-        ROOT / "figures" / "gradcam",
-        ROOT / "figures" / "correct_incorrect_examples",
+        ROOT / "figures" / "gradcam_selected",
         ROOT / "figures" / "paper",
     ]
     for folder in figure_dirs:

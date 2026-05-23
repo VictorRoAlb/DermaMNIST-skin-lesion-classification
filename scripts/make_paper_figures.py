@@ -1,5 +1,4 @@
 from pathlib import Path
-import sys
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -32,7 +31,11 @@ def read_csv_safe(path: Path) -> pd.DataFrame | None:
 
 
 def normalize_pm(value: str) -> str:
-    return str(value).replace("ą", "±")
+    text = str(value)
+    text = text.replace("Ã‚Â±", "±")
+    text = text.replace("Â±", "±")
+    text = text.replace("Ä…", "±")
+    return text
 
 
 def make_final_metrics_figure(df: pd.DataFrame) -> None:
@@ -45,8 +48,7 @@ def make_final_metrics_figure(df: pd.DataFrame) -> None:
         return
 
     def parse_mean(text):
-        text = normalize_pm(text)
-        token = text.split("±")[0].strip()
+        token = normalize_pm(text).split("±")[0].strip()
         return float(token)
 
     fig, axes = plt.subplots(1, len(available), figsize=(6 * len(available), 5))

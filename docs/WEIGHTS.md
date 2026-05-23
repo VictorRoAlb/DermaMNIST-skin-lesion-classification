@@ -33,4 +33,5 @@ models/checkpoints/
 
 - Compartimos únicamente los checkpoints finales entrenados por nosotros.
 - No redistribuimos pesos externos de ImageNet, RadImageNet/RAC ni EfficientNet-B1 en entorno ISIC como archivos independientes.
+- Los checkpoints publicados corresponden a los modelos finales ajustados en nuestro trabajo. En los modelos de transferencia, estos checkpoints pueden contener parámetros derivados de inicializaciones externas, por lo que su reutilización debe respetar también las condiciones de uso de los recursos originales utilizados para el preentrenamiento.
 - Si se desean regenerar los modelos desde cero, debe seguirse el notebook principal y obtener los pesos externos desde sus fuentes oficiales.

@@ -32,7 +32,7 @@ El dataset no se redistribuye en este repositorio. Para reproducir el trabajo de
 
 ## Métricas principales
 
-Hemos evaluado Accuracy, Balanced Accuracy, Macro F1, Cohen’s Kappa y Macro Recall. Hemos utilizado métricas macro y balanced accuracy porque DermaMNIST presenta desbalanceo entre clases y queríamos evitar una interpretación basada únicamente en accuracy.
+Hemos evaluado Accuracy, Balanced Accuracy, Macro F1, Cohen's Kappa y Macro Recall. Hemos utilizado métricas macro y balanced accuracy porque DermaMNIST presenta desbalanceo entre clases y queríamos evitar una interpretación basada únicamente en accuracy.
 
 ## Resultados y conclusiones
 
@@ -49,8 +49,8 @@ Hemos evaluado Accuracy, Balanced Accuracy, Macro F1, Cohen’s Kappa y Macro Re
 
 Como apoyo interpretativo, incluimos dos ejemplos Grad-CAM seleccionados del modelo M3: un caso correctamente clasificado y un caso incorrecto. Estas visualizaciones se emplean únicamente como ejemplos cualitativos para comprobar si la activación del modelo se concentra en regiones visualmente relevantes.
 
-- Ejemplo Grad-CAM correcto seleccionado: `correct_01_idx0.png`
-- Ejemplo Grad-CAM incorrecto seleccionado: `incorrect_01_idx3.png`
+- `figures/gradcam_selected/M3_gradcam_correct_example.png`
+- `figures/gradcam_selected/M3_gradcam_incorrect_example.png`
 
 ## Reproducción
 
@@ -63,10 +63,9 @@ Como apoyo interpretativo, incluimos dos ejemplos Grad-CAM seleccionados del mod
 
 Hemos publicado los seis checkpoints finales entrenados por nosotros en `models/checkpoints/` utilizando Git LFS, de forma que puedan reutilizarse sin incorporar al repositorio pesos externos de terceros. Para descargar estos archivos tras clonar el repositorio recomendamos ejecutar `git lfs install` y `git lfs pull`.
 
+### Reutilización de checkpoints
 
-## Reutilización de checkpoints
-
-Los checkpoints finales publicados en Git LFS corresponden únicamente a los modelos entrenados en nuestro trabajo. No redistribuimos pesos externos de ImageNet, RadImageNet/RAC ni EfficientNet-B1 en entorno ISIC fuera del resultado final entrenado.
+Los checkpoints publicados corresponden a los modelos finales ajustados en nuestro trabajo. En los modelos de transferencia, estos checkpoints pueden contener parámetros derivados de inicializaciones externas, por lo que su reutilización debe respetar también las condiciones de uso de los recursos originales utilizados para el preentrenamiento.
 
 ## Licencias, datos y pesos preentrenados
 

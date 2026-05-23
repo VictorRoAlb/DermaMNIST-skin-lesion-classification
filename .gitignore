@@ -6,14 +6,17 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 .env
+
 figures/gradcam/
 figures/correct_incorrect_examples/
+
 *.zip
 *.keras
 *.h5
 *.pt
 *.pth
 *.ckpt
+
 !models/checkpoints/
 !models/checkpoints/.gitkeep
 !models/checkpoints/M1_CNN_PROPIA_224_seed123_best.keras

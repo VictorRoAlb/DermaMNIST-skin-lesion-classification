@@ -8,7 +8,7 @@ La licencia del repositorio se aplica únicamente al código propio y a la docum
 |---|---|---|---|
 | DermaMNIST / MedMNIST | Dataset principal de evaluación | No | Descargar desde fuentes oficiales |
 | HAM10000 | Fuente original dermatológica de DermaMNIST | No | Uso académico/científico según la fuente original |
-| ImageNet pretrained weights | Inicialización de ResNet50 | No | Pesos obtenidos mediante librerías/frameworks autorizados |
+| ImageNet pretrained weights | Inicialización de ResNet50 | No | Pesos obtenidos mediante librerías o frameworks autorizados |
 | RadImageNet / RAC weights | Inicialización médica/radiológica | No | Debe consultarse la licencia oficial de la fuente original antes de redistribuir pesos o datos |
 | ISIC / EfficientNet-B1 / MaxNet dermatológico | Inicialización dermatológica | No | Debe consultarse la licencia oficial de la fuente original antes de redistribuir pesos o datos |
 
