@@ -36,14 +36,21 @@ Hemos evaluado Accuracy, Balanced Accuracy, Macro F1, Cohen's Kappa y Macro Reca
 
 ## Resultados y conclusiones
 
+| Modelo | Acc. | Bal. Acc. | Kappa | Macro Rec. | Macro F1 | n test |
+|---|---:|---:|---:|---:|---:|---:|
+| M1: CNN propia | 0.711 ± 0.008 | 0.450 ± 0.018 | 0.435 ± 0.016 | 0.450 ± 0.018 | 0.419 ± 0.016 | 2005 |
+| M2: ResNet50 ImageNet shallow | 0.812 ± 0.008 | 0.649 ± 0.023 | 0.642 ± 0.015 | 0.649 ± 0.023 | 0.645 ± 0.020 | 2005 |
+| M3: ResNet50 ImageNet deep | 0.850 ± 0.008 | 0.706 ± 0.022 | 0.706 ± 0.015 | 0.706 ± 0.022 | 0.736 ± 0.019 | 2005 |
+| M4: ResNet50 RadImageNet/RAC shallow | 0.723 ± 0.008 | 0.416 ± 0.018 | 0.450 ± 0.016 | 0.416 ± 0.018 | 0.417 ± 0.017 | 2005 |
+| M5: ResNet50 RadImageNet/RAC deep | 0.728 ± 0.008 | 0.468 ± 0.018 | 0.482 ± 0.015 | 0.468 ± 0.018 | 0.445 ± 0.016 | 2005 |
+| M6: EfficientNet-B1 ISIC frozen | 0.872 ± 0.006 | 0.631 ± 0.011 | 0.753 ± 0.012 | 0.631 ± 0.011 | 0.619 ± 0.015 | 2005 |
+
 - M3 es el mejor modelo comparable por Macro F1 y Balanced Accuracy.
 - M6 obtiene la mayor Accuracy y el mayor Kappa, pero no supera a M3 en Macro F1.
 - Los resultados principales proceden de métricas agregadas y bootstrap en test.
 
 ## Figuras destacadas
 
-- `figures/learning_curves/M3_RESNET50_IMAGENET_DEEP_seed123_learning_curves.png`
-- `figures/paper/m3_learning_curves.png`
 - `figures/paper/final_metrics_comparison.png`
 - `figures/paper/macro_f1_vs_training_time.png`
 
